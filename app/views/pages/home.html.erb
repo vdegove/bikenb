@@ -1,2 +1,57 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TEST</title>
+  </head>
+  <body>
+      <div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <img src="images/logo.png" alt="logo">
+    </a>
+
+    <!--First try -->
+
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Rent your bike</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Saved</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Help</a>
+
+      <% if user_signed_in? %>
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+
+
+    <!-- Profile picture with dropdown list -->
+
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Host</a></li>
+          <li><a href="#">Trips</a></li>
+          <li><a href="#">Messages</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- end of file -->
