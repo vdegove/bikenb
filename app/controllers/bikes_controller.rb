@@ -9,11 +9,16 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bikes_params)
+    @bike.user = current_user
     if @bike.save
-      redirect_to bikes_path(@bike)
+      redirect_to bike_path(@bike)
     else
       render :new
     end
+  end
+
+  def show
+    @bike = Bike.find(params[:id])
   end
 
   private
