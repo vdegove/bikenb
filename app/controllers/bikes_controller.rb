@@ -21,6 +21,8 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @reservation = Reservation.new
+    @reservation.bike_id = @bike[:id]
   end
 
   private
