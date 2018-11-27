@@ -21,11 +21,4 @@ class BikePolicy < ApplicationPolicy
     record.user == user
   end
 
-  # def my_bike?
-  #   true
-  #   # record.user == user
-  #   # record[1].user_id == user.id
-  #   # record.id == user.id
-  # end
-
 end
