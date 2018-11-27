@@ -30,9 +30,19 @@ class BikesController < ApplicationController
   end
 
   def edit
+    @bike = Bike.find(params[:id])
+    authorize @bike
   end
 
   def update
+    @bike = Bike.find(params[:id])
+    authorize @bike
+    @bike.update(bikes_params)
+    if @bike.save
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
   end
 
   private
