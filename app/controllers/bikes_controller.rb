@@ -3,14 +3,17 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    authorize @bikes
   end
 
   def new
     @bike = Bike.new
+    authorize @bike
   end
 
   def create
     @bike = Bike.new(bikes_params)
+    authorize @bike
     @bike.user = current_user
     if @bike.save
       redirect_to bike_path(@bike)
