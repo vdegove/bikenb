@@ -30,14 +30,6 @@ class BikesController < ApplicationController
     @reservation.bike_id = @bike[:id]
   end
 
-  def my_bike
-    if current_user == nil
-      redirect_to bikes_path
-    else
-      @bikes = current_user.bikes
-    end
-  end
-
   def edit
   end
 
