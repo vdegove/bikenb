@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bikes
   has_many :reservations
-  # has_many :reservations, through: :bikes
-  # has_many :bikes, through: :reservations
+  has_many :reservations_as_owner, through: :bikes, source: :reservations
 end
