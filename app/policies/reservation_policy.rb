@@ -9,6 +9,7 @@ class ReservationPolicy < ApplicationPolicy
     true
   end
 
-  def index
+  def validate?
+    record.bike.user == user
   end
 end

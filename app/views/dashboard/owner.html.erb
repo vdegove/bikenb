@@ -1,8 +1,20 @@
 <h1>Owner dashboard</h1>
+
+<h2>My bikes</h2>
+
+<ul>
+  <% @bikes.each do |bike| %>
+    <li><%= bike.name %></li>
+  <% end %>
+
+</ul>
+
+<h2>My bikes reservations</h2>
 <ul>
 <% @reservations.each do |reservation| %>
 <li>
-  <%= reservation.bike.name %>, from <%= reservation.starts_at %> to <%= reservation.ends_at %>. Status : <%= reservation.status? ? "confirmed" : "not confirmed" %>
+  <%= reservation.bike.name %>, from <%= reservation.starts_at %> to <%= reservation.ends_at %>.  Asked by: <%= reservation.user.email %>
+  Status : <%= reservation.status ? "approved"  : "not approved" %> <%= link_to("approve", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
 </li>
 <% end %>
 </ul>
