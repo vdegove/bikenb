@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
 
-<% @bikes.each do |bike| %>
-<div class="col-xs-12 col-sm-4">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');">
-    <div class="card-description">
-      <h2><%= bike.name %></h2>
-      <p><%= bike.price_per_day/100 %> € per day</p>
+  <% @bikes.each do |bike| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');">
+        <div class="card-description">
+          <h2><%= bike.name %></h2>
+          <p><%= bike.price_per_day/100 %> € per day</p>
+        </div>
+        <%= link_to "", bike_path(bike), class: "card-link" %>
+      </div>
     </div>
-    <%= link_to "", bike_path(bike), class: "card-link" %>
-  </div>
-</div>
-<% end %>
+  <% end %>
   </div>
 </div>
