@@ -8,4 +8,7 @@ class ReservationPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def index
+  end
 end

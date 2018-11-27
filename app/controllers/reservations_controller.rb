@@ -1,10 +1,6 @@
 class ReservationsController < ApplicationController
   skip_after_action :verify_authorized, only: [:my_bike]
 
-  def new
-    @reservation = Reservation.new
-  end
-
   def create
     @reservation = Reservation.new(reservations_params)
     authorize @reservation
@@ -17,9 +13,8 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def show
-    @reservation = Reservation.find(params[:bike_id])
-    authorize @reservation
+  def index
+    @reservations = policy_scope(Reservation)
   end
 
   private

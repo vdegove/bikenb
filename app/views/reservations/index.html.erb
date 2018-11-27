@@ -1,0 +1,7 @@
+<ul>
+<% @reservations.each do |reservation| %>
+<li>
+  <%= reservation.bike.name %>, from <%= reservation.starts_at %> to <%= reservation.ends_at %>. Status : <%= reservation.status? ? "confirmed" : "not confirmed" %>
+</li>
+<% end %>
+</ul>
