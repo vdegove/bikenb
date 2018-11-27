@@ -10,10 +10,10 @@ class BikePolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
-  def index
-    @bikes = policy_scope(bike)
+  def index?
+    true
   end
 end
