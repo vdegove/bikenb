@@ -16,4 +16,9 @@ class BikePolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def update?
+    record.user == user
+  end
+
 end
