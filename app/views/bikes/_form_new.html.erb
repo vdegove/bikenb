@@ -5,5 +5,7 @@
   <%= b.input :description %>
   <%= b.input :photo %>
   <%= b.input :photo_cache, as: :hidden %>
-  <%= b.submit "Add your bike", class: "btn btn-primary" %>
+  <% if policy(@bike).create? %>
+    <%= b.submit "Add your bike", class: "btn btn-primary" %>
+  <% end %>
 <% end %>

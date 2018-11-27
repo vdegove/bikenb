@@ -9,6 +9,9 @@
           <p><%= bike.price_per_day/100 %> € per day</p>
         </div>
         <%= link_to "", bike_path(bike), class: "card-link" %>
+        <% if policy(bike).edit? %>
+         <%= link_to "Update", edit_bike_path(bike) %>
+        <% end %>
       </div>
     </div>
   <% end %>
