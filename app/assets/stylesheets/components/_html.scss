@@ -1,16 +1,45 @@
 body, html {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
 }
 
-.bg {
+.background {
     /* The image used */
-    background-image: url("https://images.unsplash.com/photo-1528629297340-d1d466945dc5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef92ab342dceba763781e4dd9f9b396c&auto=format&fit=crop&w=1995&q=80");
-
-    /* Full height */
+    background-image: url("background_img9.jpeg");
     height: 100%;
 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover !important;
+
+    background-size: cover;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+p {
+  font-size: 20px;
+  opacity: 0.9;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.banner h1, .banner p {
+  margin: 0;
+  text-align: center;
+}
+
+.banner {
+  color: white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover !important;
+
 }
