@@ -1,5 +1,6 @@
 /* Main navbar */
 .navbar-wagon {
+  color: white;
   background-color: transparent;
   transition: all 0.3s ease;
   height: 70px;
@@ -27,16 +28,16 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* Navbar link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+.navbar-wagon a {
+  color: white;
+  font-size: 16px;
 }
-.navbar-wagon-link:hover {
-  color: #da552f;
+
+.navbar-wagon a:hover {
   text-decoration: none;
 }
 
