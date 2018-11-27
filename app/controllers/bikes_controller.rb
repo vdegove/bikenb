@@ -1,5 +1,7 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: [:my_bike]
+
 
   def index
     @bikes = policy_scope(Bike)
@@ -28,8 +30,15 @@ class BikesController < ApplicationController
     @reservation.bike_id = @bike[:id]
   end
 
-  def edit
+  def my_bike
+    if current_user == nil
+      redirect_to bikes_path
+    else
+      @bikes = current_user.bikes
+    end
+  end
 
+  def edit
   end
 
   def update
