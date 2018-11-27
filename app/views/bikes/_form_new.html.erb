@@ -1,0 +1,11 @@
+<%= simple_form_for @bike do |b| %>
+  <%= b.input :name %>
+  <%= b.input :address %>
+  <%= b.input :price_per_day %>
+  <%= b.input :description %>
+  <%= b.input :photo %>
+  <%= b.input :photo_cache, as: :hidden %>
+  <% if policy(@bike).create? %>
+    <%= b.submit "Add your bike", class: "btn btn-primary" %>
+  <% end %>
+<% end %>

@@ -1,18 +1,9 @@
-
 <div class="container">
   <div class="row">
-    <div class="col-sm-2 col-sm-offset-2"></div>
-      <%= simple_form_for @bike do |b| %>
-        <%= b.input :name %>
-        <%= b.input :address %>
-        <%= b.input :price_per_day %>
-        <%= b.input :description %>
-        <%= b.input :photo %>
-        <%= b.input :photo_cache, as: :hidden %>
-        <% if policy(@bike).create? %>
-          <%= b.submit "Rent your bike", class: "btn btn-primary" %>
-        <% end %>
-      <% end %>
+    <div class="col-xs-12 col-sm-6">
+      <h1>Add your bike</h1>
+      <%= render 'form_new', bike: @bike %>
+    </div>
   </div>
 </div>
 
