@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.bike_id = params[:bike_id]
     if @reservation.save
-      redirect_to bike_path()
+      redirect_to bikes_path
     else
       render :show
     end
