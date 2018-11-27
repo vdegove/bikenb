@@ -1,6 +1,5 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  skip_after_action :verify_authorized, only: [:my_bike]
 
 
   def index
