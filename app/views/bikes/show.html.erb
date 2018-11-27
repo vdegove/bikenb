@@ -1,6 +1,10 @@
 <h1> Bike's information </h1>
 
 <%= @bike.name %>
+<%= @reservation.status %>
+<% if policy(@bike).edit? %>
+  <%= link_to "Update", edit_bike_path(@bike) %>
+<% end %>
 <%= cl_image_tag @bike.photo , height: 300, width: 400, crop: :fill if @bike.photo.present? %>
 
 <div>

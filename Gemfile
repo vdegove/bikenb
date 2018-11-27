@@ -19,6 +19,9 @@ gem 'webpacker'
 # Authentification
 gem 'devise'
 
+# Authorization
+gem "pundit"
+
 # Photo uploading
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
