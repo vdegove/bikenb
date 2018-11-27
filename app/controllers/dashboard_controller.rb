@@ -11,5 +11,6 @@ class DashboardController < ApplicationController
   end
 
   def renter
+    @reservations = current_user.reservations
   end
 end
