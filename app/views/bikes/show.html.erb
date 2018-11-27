@@ -1,0 +1,13 @@
+<h1> Bike's information </h1>
+
+<%= @bike.name %>
+<%= cl_image_tag @bike.photo , height: 300, width: 400, crop: :fill if @bike.photo.present? %>
+
+<div>
+  <%= simple_form_for [@bike, @reservation] do |b| %>
+    <%= b.input :starts_at %>
+    <%= b.input :ends_at %>
+    <%= b.submit "Book this bike", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
