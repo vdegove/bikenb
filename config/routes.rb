@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :bikes, only: [ :new, :create, :show, :index, :edit, :update ] do
     resources :reservations, only: [:create]
   end
-  # resources :reservations, only: [:index]
   get "/dashboard/owner", to: "dashboard#owner"
   get "/dashboard/renter", to: "dashboard#renter"
+  get "/reservations/:id/validate", to: "reservations#validate", as: :validate_reservation
 end
