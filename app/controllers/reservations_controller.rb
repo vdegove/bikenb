@@ -8,7 +8,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservations_params)
     @reservation.user = current_user
     @reservation.bike_id = params[:bike_id]
-    raise
     if @reservation.save
       redirect_to bikes_path
     else
