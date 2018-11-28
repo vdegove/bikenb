@@ -1,0 +1,15 @@
+.form {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.background_image {
+  background-image: url('background_new.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
