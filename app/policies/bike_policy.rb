@@ -20,8 +20,8 @@ class BikePolicy < ApplicationPolicy
   def update?
     record.user == user
   end
-  
-  def edit?
+
+  def destroy?
     update?
   end
 end
