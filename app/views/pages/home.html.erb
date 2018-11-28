@@ -11,6 +11,12 @@
         <p>A bike, whenever, wherever.</p>
         &ensp;
         <p><%= link_to "Hop on !", bikes_path, class: "btn-medium" %></p>
+
+          <%= form_tag(bikes_path, class: "form-inline") do %>
+          <div class="form-group"><%= text_field_tag :address, class: "form-control" %></div>
+              <%= submit_tag 'Search', class: "btn btn-primary" %>
+          <% end %>
+
       </div>
      </div>
   </body>
