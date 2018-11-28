@@ -1,10 +1,13 @@
-<div class="container">
-  <div class="style_all_website">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h1>Edit your bike</h1>
-        <%= render 'form_new', bike: @bike %>
+  <body class="background_image_form" url('<%= image_path "background_new.jpg" %>');">
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="form">
+              <h1>Edit your bike</h1>
+              <%= render 'form_edit', bike: @bike %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>

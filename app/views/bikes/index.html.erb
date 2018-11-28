@@ -3,7 +3,6 @@
   </div>
 
 <div class="container-card">
-  <div class="style_all_website">
   <div class="row">
 
   <% @bikes.each do |bike| %>
@@ -17,7 +16,7 @@
         <%= link_to "", bike_path(bike), class: "card-link" %>
       </div>
     </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
