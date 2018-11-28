@@ -6,24 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-augustin = User.new(email: "cousinaug01@hotmail.fr")
-augustin.password = "123456"
-augustin.save!
+renter = User.new(email: "renter@example.com")
+renter.password = "123456"
+renter.save!
 
-laura = User.new(email: "laura.ducosfilippi@gmail.com")
-laura.password = "654321"
-laura.save!
+owner = User.new(email: "owner@example.com")
+owner.password = "654321"
+owner.save!
 
-puts "Users Augustin and Laura created!"
+puts "Users renter and owner created!"
 
 velo = Bike.new(
-  name: "Douze V2 de Laura",
+  name: "Douze V2",
   description: "Un vélo cargo pour transporter plein de choses",
   price_per_day: "1500",
   address: "14 rue Crespin du Gast, 75009 Paris")
 velo.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1543250831/g2mlshdc2k68mwrin04z.jpg"
 
-velo.user = laura
+velo.user = owner
 velo.save!
 
 velo_2 = Bike.new(
@@ -32,8 +32,8 @@ velo_2 = Bike.new(
   price_per_day: "1200",
   address: "16 Villa Gaudelet, 75009 Paris")
 velo_2.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1543251227/tta6fyivnnandj81rsvz.jpg"
-velo_2.user = laura
+velo_2.user = owner
 velo_2.save!
 
-puts "Two bikes created and assignated to the owner Laura"
+puts "Two bikes created and assignated to the owner"
 
