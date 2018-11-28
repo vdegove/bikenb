@@ -3,6 +3,8 @@
     <div class="col-xs-12 col-sm-4">
       <h1> Bike's information </h1>
       <h3><%= @bike.name %></h3>
+      <p><%= @bike.address %></p>
+      <p><%= @bike.description %></p>
         <%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
         <%= render 'form_show', bike: @bike %>
         <div>
