@@ -5,12 +5,12 @@
         <div class="form">
         <h1> Bike's information </h1>
         <h3><%= @bike.name %></h3>
+        <p><%= @bike.address %></p>
+        <p><%= @bike.description %></p>
           <%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
           <br>
           <%= render 'form_show', bike: @bike %>
           <br>
-          <div>
-          </div>
         </div>
       </div>
     </div>
