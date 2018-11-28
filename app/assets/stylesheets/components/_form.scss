@@ -1,6 +1,6 @@
 .form h1 {
   color: black;
-  font-family: Karla;
+  font-family: Open Sans;
 }
 
 .form {
@@ -8,6 +8,7 @@
 }
 
 .form {
+  margin-top: 50px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 30px;
   background: white;
@@ -16,7 +17,7 @@
 }
 
 .background_image_form {
-  background-image: url('background_new.jpg');
+  background-image: url(image_path('background_new.jpg'));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
