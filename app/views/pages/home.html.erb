@@ -12,8 +12,8 @@
         &ensp;
         <p><%= link_to "Hop on !", bikes_path, class: "btn-medium" %></p>
 
-          <%= form_tag(bikes_path, class: "form-inline") do %>
-          <div class="form-group"><%= text_field_tag :address, class: "form-control" %></div>
+          <%= form_tag(bikes_path, class: "form-inline location-search") do %>
+          <div class="form-group"><%= text_field_tag :address%></div>
               <%= submit_tag 'Search', class: "btn btn-primary" %>
           <% end %>
 
