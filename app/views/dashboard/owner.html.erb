@@ -36,6 +36,7 @@
             <div class="message-status">
               <p class="status pending"><%= reservation.status? ? "confirmed" : "not confirmed" %></p>
               <p class="price">€345</p>
+              <%= link_to("approve", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
             </div>
           </div>
       <% end %>
