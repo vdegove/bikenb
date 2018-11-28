@@ -23,7 +23,7 @@
 .card-description {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 24px;
 }
 .card-description h2 {
   font-size: 24px;
@@ -46,3 +46,21 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.card-image {
+  height: 156px;
+  border-radius: 5px;
+}
+
+.card-bottom {
+  height:100px
+}
+
+.container-card {
+  padding-top: 10px;
+  padding-bottom: 10vh;
+  margin-right: 40px;
+  margin-left: 40px;
+
+}
+

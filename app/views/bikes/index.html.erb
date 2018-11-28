@@ -1,17 +1,22 @@
-<div class="container">
+  <div class="banner-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1523891046626-daa31d9e280f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2e42e390762dabd663cd6d9d28cf5c0e&auto=format&fit=crop&w=1350&q=80');">
+  </div>
+
+  <div class="results-message">
+    <i class="fa fa-bicycle" aria-hidden="true">  <%= @bikes.length %>    Bikes next to you </i>
+  </div>
+
+<div class="container-card">
   <div class="row">
 
   <% @bikes.each do |bike| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');">
+    <div class="col-xs-12 col-sm-4" style="height:256px">
+      <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');"> </div>
+      <div class="card-bottom">
         <div class="card-description">
           <h2><%= bike.name %></h2>
           <p><%= bike.price_per_day/100 %> € per day</p>
         </div>
         <%= link_to "", bike_path(bike), class: "card-link" %>
-        <% if policy(bike).edit? %>
-         <%= link_to "Update", edit_bike_path(bike) %>
-        <% end %>
       </div>
     </div>
     <% end %>

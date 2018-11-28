@@ -1,0 +1,25 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+}
+
+.banner-index {
+  // position: fixed;
+  // top: 0px;
+  margin-top: 20px;
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+}
+
+
+
+.results-message {
+  justify-content: center;
+  text-align: center;
+  height: 32px;
+  margin-top: 32px;
+}
+
