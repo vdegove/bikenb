@@ -9,9 +9,10 @@ body, html {
   // position: fixed;
   // top: 0px;
   margin-top: 20px;
-  height: 40vh;
+  height: 48vh;
   width: 100%;
   background-size: cover;
+  background-position: 0px -512px;
 }
 
 
@@ -19,7 +20,11 @@ body, html {
 .results-message {
   justify-content: center;
   text-align: center;
-  height: 32px;
+  height: 64px;
   margin-top: 32px;
+
+  .fa-bicycle {
+  color:#434343;
+  }
 }
 
