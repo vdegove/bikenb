@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+
+.banner {
+  background-image: linear-gradient(-225deg, rgba(0,0,5,0.4) 0%, rgba(0,36,61,0.4) 50%), url(image_path("background_img9.jpg"));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content {
+  color: white;
+  height: 300px;
+  text-align: center;
+}
+
+
+.banner-content h1 {
+  margin: 0;
+  font-size: 70px;
+}
+
+.banner-content p {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  opacity: 0.9;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
