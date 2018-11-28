@@ -1,4 +1,11 @@
-<h1>Dashboard#renter</h1>
+<div class="tabs">
+  <%= link_to("My Bookings", dashboard_renter_path, class: "tab active") %>
+  <%= link_to("My Bikes", dashboard_owner_path, class: "tab ") %>
+</div>
+
+
+<h2>My Bookings</h2>
+
 
 <ul>
 <% @reservations.each do |reservation| %>
@@ -7,4 +14,5 @@
 </li>
 <% end %>
 </ul>
+
 

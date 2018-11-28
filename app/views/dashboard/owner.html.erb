@@ -1,6 +1,11 @@
-<h1>Owner dashboard</h1>
+<div class="tabs">
+  <%= link_to("My Bookings", dashboard_renter_path, class: "tab") %>
+  <%= link_to("My Bikes", dashboard_owner_path, class: "tab active ") %>
+</div>
 
-<h2>My bikes</h2>
+
+
+<h2>My Bikes</h2>
 
 <ul>
   <% @bikes.each do |bike| %>
