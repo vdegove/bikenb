@@ -2,7 +2,7 @@
   <div></div>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <% if user_signed_in? %>
-      <%= link_to "Rent your bike", new_bike_path %>
+      <%= link_to "Rent your bike", new_bike_path, class: "btn-medium-inside" %>
       &ensp;
       <%= link_to "Bikes", bikes_path %>
       &ensp;
@@ -10,6 +10,7 @@
           <div class="dropdown">
             <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                  <li><%= link_to "Home", root_path %></li>
                   <li><%= link_to "Dashboard", dashboard_renter_path %></li>
                   <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                 </ul>
