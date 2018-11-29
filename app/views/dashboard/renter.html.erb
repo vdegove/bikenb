@@ -1,6 +1,6 @@
 <div class="tabs">
   <%= link_to("My Bookings", dashboard_renter_path, class: "tab active") %>
-  <%= link_to("My Bikes", dashboard_owner_path, class: "tab ") %>
+  <%= link_to("My Bikes", dashboard_owner_path, class: "tab") %>
 </div>
 
 <div class="dashboard-container">
@@ -22,7 +22,7 @@
             </div>
             <div class="message-status">
               <p class="status pending"><%= reservation.status %></p>
-              <p class="price">€345</p>
+              <p class="price"><%= reservation.price %> €</p>
             </div>
           </div>
         <% end %>

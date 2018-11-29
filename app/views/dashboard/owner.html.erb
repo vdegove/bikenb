@@ -35,7 +35,7 @@
             </div>
             <div class="message-status">
               <p class="status pending"><%= reservation.status %></p>
-              <p class="price"><%= reservation.bike.price_per_day %></p>
+              <p class="price"><%= reservation.price %> €</p>
               <%= link_to("Approuver", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
               <%= link_to("Décliner", decline_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
             </div>
