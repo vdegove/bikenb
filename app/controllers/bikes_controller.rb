@@ -2,7 +2,20 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
-    @bikes = policy_scope(Bike)
+    if params[:category] == "Tous" && params[:location].present?
+      @bikes = policy_scope(Bike.near(params[:location], 50))
+    elsif params[:category] == "Tous"
+      @bikes = policy_scope(Bike)
+    elsif  params[:category].present?
+      @bikes = policy_scope(Bike.search_by_category(params[:category]))
+      if params[:location].present?
+        @bikes = @bikes.near(params[:location], 50)
+      else
+        @bikes
+      end
+    else
+      @bikes = policy_scope(Bike)
+    end
   end
 
   def new
