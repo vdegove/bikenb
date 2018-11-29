@@ -11,7 +11,7 @@ class Bike < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  validates :price_per_day, presence: true, numericality: { only_integer: true }
+  validates :price_per_day, presence: true
 
   # Photo uploader
   mount_uploader :photo, PhotoUploader

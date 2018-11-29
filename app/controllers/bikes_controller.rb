@@ -2,6 +2,7 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
+    mapping
     if params[:category] == "Tous" && params[:location].present?
       @bikes = policy_scope(Bike.near(params[:location], 50))
     elsif params[:category] == "Tous"
@@ -63,6 +64,17 @@ class BikesController < ApplicationController
     authorize @bike
     @bike.destroy
     redirect_to dashboard_owner_path
+  end
+
+  def mapping
+    @bikes = Bike.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bikes.map do |bike|
+      {
+        lng: bike.longitude,
+        lat: bike.latitude
+      }
+    end
   end
 
   private
