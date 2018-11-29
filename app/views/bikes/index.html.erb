@@ -11,7 +11,7 @@
       <div class="card-bottom">
         <div class="card-description">
           <h2><%= bike.name %></h2>
-          <p><%= bike.price_per_day/100 %> € per day</p>
+          <p><%= number_to_currency(bike.price_per_day.to_f/100, unit: "€", format: "%n %u", separator: ",", separator: ".") %> per day</p>
         </div>
         <%= link_to "", bike_path(bike), class: "card-link" %>
       </div>
