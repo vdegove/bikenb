@@ -3,9 +3,11 @@
 * ------------------------------------- */
 
 .alert {
+  top: 10;
   margin: 0;
   text-align: center;
   color: white;
+  z-index: 0;
 }
 
 .alert-info {

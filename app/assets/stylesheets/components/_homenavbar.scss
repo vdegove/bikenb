@@ -43,11 +43,13 @@
 
 /* Dropdown menu */
 .navbar-home-wagon-dropdown-menu {
+  color: white;
   margin-top: 15px;
   background: transparent;
   border: 1px solid white;
   border-radius: 5px;
 }
+
 .navbar-home-wagon-dropdown-menu li > a {
   color: white;
   font-size: 15px !important;
@@ -55,6 +57,7 @@
   padding: 10px 20px;
 }
 .navbar-home-wagon-dropdown-menu li > a:hover {
+  color: white;
   background: transparent;
 }
 .navbar-home-wagon-dropdown-menu:before {

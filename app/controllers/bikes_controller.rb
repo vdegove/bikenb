@@ -25,6 +25,7 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bikes_params)
+    @bike.price_per_day = bikes_params[:price_per_day].to_f*100
     authorize @bike
     @bike.user = current_user
     if @bike.save
