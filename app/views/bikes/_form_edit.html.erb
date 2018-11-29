@@ -1,0 +1,15 @@
+<%= simple_form_for @bike do |b| %>
+  <%= b.input :name %>
+  <%= b.input :address %>
+  <%= b.input :price_per_day %>
+  <%= b.input :description %>
+  <%= b.input :photo %>
+  <%= b.input :photo_cache, as: :hidden %>
+  <div class="text-center">
+    <% if policy(@bike).create? %>
+      <%= b.submit "Edit your bike", class: "new-btn-medium" %>
+    <% end %>
+    &ensp;&ensp;
+    <%= link_to "Delete this bike", bike_path(@bike), method: :delete, class: "new-btn-medium", data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>

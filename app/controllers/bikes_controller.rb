@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
 
   def index
@@ -43,6 +43,13 @@ class BikesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @bike = Bike.find(params[:id])
+    authorize @bike
+    @bike.destroy
+    redirect_to bikes_path
   end
 
   private

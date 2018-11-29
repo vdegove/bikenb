@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :bikes, only: [ :new, :create, :show, :index, :edit, :update ] do
+  resources :bikes, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
     resources :reservations, only: [:create]
   end
   get "/dashboard/owner", to: "dashboard#owner"
