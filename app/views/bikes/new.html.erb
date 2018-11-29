@@ -1,10 +1,12 @@
 <body class="background_image_form" url('<%= image_path "background_new.jpg" %>');">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <div class="form">
-            <h1>Add your bike</h1>
-            <%= render 'form_new', bike: @bike %>
+      <div data-aos="fade-up" data-aos-duration="2000">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="form">
+              <h1>Add your bike</h1>
+              <%= render 'form_new', bike: @bike %>
+            </div>
           </div>
         </div>
       </div>
