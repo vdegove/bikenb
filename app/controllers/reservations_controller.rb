@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.bike_id = params[:bike_id]
     if @reservation.save
-      redirect_to bikes_path
+      redirect_to dashboard_renter_path
     else
       render :show
     end
