@@ -14,7 +14,7 @@ class Bike < ApplicationRecord
   #PgSearch
   include PgSearch
   pg_search_scope :search_by_category_and_location,
-    against: [ :title, :syllabus ],
+    against: [ :category, :city ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
