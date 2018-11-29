@@ -20,6 +20,14 @@ class ReservationsController < ApplicationController
     redirect_to dashboard_owner_path
   end
 
+  def decline
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.decline!
+    @reservation.save
+    redirect_to dashboard_owner_path
+  end
+
   private
 
   def reservations_params

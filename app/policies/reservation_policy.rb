@@ -12,4 +12,8 @@ class ReservationPolicy < ApplicationPolicy
   def validate?
     record.bike.user == user
   end
+
+  def decline?
+    record.bike.user == user
+  end
 end
