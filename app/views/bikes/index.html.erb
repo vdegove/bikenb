@@ -1,10 +1,22 @@
 <div class="results-message">
-    <strong> <%= @bikes.length %></strong>  Bikes next to you <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
-  </div>
-
+  <strong> <%= @bikes.length %></strong>  Vélos prêt de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
+</div>
 <div class="container-card">
+   <div class="form-inline">
+    <%= form_tag bikes_path, method: :get do %>
+        <%= select_tag :category,
+        options_for_select("<option>Tous</option><option>VTT</option><option>Route</option><option>Ville</option>".html_safe,
+         params[:category])
+        %>
+        <%= text_field_tag :location,
+          params[:location],
+          class: "form-control",
+          placeholder: "Paris"
+        %>
+        <%= button_tag %>
+    <% end %>
+  </div>
   <div class="row">
-
   <% @bikes.each do |bike| %>
     <div class="col-xs-12 col-sm-4" style="height:256px">
       <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');"> </div>

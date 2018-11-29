@@ -1,4 +1,11 @@
 class Bike < ApplicationRecord
+  #PgSearch
+  include PgSearch
+  pg_search_scope :search_by_category,
+    against: [ :category ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
   belongs_to :user
   has_many :reservations
 
@@ -11,11 +18,4 @@ class Bike < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  #PgSearch
-  include PgSearch
-  pg_search_scope :search_by_category_and_location,
-    against: [ :category, :city ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
 end
