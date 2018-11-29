@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "/dashboard/owner", to: "dashboard#owner"
   get "/dashboard/renter", to: "dashboard#renter"
   get "/reservations/:id/validate", to: "reservations#validate", as: :validate_reservation
+  get "/reservations/:id/decline", to: "reservations#decline", as: :decline_reservation
 end

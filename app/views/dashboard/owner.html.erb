@@ -28,15 +28,16 @@
               <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
             </div>
             <div class="message-body">
-              <p><strong>I am not sure yet!</strong></p>
+              <p><strong>Je veux votre vélo !</strong></p>
               <p>
-                I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                <%= reservation.bike.description %>
               </p>
             </div>
             <div class="message-status">
-              <p class="status pending"><%= reservation.status? ? "confirmed" : "not confirmed" %></p>
-              <p class="price">€345</p>
-              <%= link_to("approve", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
+              <p class="status pending"><%= reservation.status %></p>
+              <p class="price"><%= reservation.bike.price_per_day %></p>
+              <%= link_to("Approuver", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
+              <%= link_to("Décliner", decline_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
             </div>
           </div>
       <% end %>

@@ -15,13 +15,13 @@
               <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
             </div>
             <div class="message-body">
-              <p><strong>I am not sure yet!</strong></p>
+              <p><strong>Je veux votre vélo !</strong></p>
               <p>
-                I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                <%= reservation.bike.description %>
               </p>
             </div>
             <div class="message-status">
-              <p class="status pending"><%= reservation.status? ? "confirmed" : "not confirmed" %></p>
+              <p class="status pending"><%= reservation.status %></p>
               <p class="price">€345</p>
             </div>
           </div>

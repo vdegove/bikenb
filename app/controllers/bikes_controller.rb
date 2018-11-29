@@ -52,7 +52,7 @@ class BikesController < ApplicationController
     authorize @bike
     @bike.update(bikes_params)
     if @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to dashboard_owner_path
     else
       render :edit
     end
@@ -62,7 +62,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     authorize @bike
     @bike.destroy
-    redirect_to bikes_path
+    redirect_to dashboard_owner_path
   end
 
   private
