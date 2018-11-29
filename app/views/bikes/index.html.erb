@@ -2,19 +2,16 @@
   <strong> <%= @bikes.length %></strong>  Vélos prêt de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
 </div>
 <div class="container-card">
-   <div class="form-inline">
-    <%= form_tag bikes_path, method: :get do %>
-        <%= select_tag :category,
-        options_for_select("<option>Tous</option><option>VTT</option><option>Route</option><option>Ville</option>".html_safe,
-         params[:category])
-        %>
-        <%= text_field_tag :location,
-          params[:location],
-          class: "form-control",
-          placeholder: "Paris"
-        %>
-        <%= button_tag %>
-    <% end %>
+    <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
+    <div class="form-group">
+      <%= select_tag :category,
+      options_for_select("<option>Tous</option><option>VTT</option><option>Route</option><option>Ville</option>".html_safe,
+       params[:category]), class: "form-control"
+       %>
+       <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Paris" %>
+    </div>
+  <%= submit_tag "search bikes", class: 'btn-medium-inline' %>
+  <% end %>
   </div>
  <div data-aos="fade-up" data-aos-duration="2000">
   <div class="row">
