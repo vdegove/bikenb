@@ -1,12 +1,9 @@
-<%= simple_form_for [@bike, @reservation] do |b| %>
+  <%= simple_form_for [@bike, @reservation] do |b| %>
   <%= b.date_field :starts_at %>
   <%= b.date_field :ends_at %>
-   <div class="text-center">
-    <%= b.submit "Book this bike", class: "new-btn-medium" %>
-    <% if policy(@bike).create? %>
-      <%= b.submit "Edit your bike", class: "new-btn-medium" %>
-    <% end %>
-    <br>
-   <%= link_to "Back to bikes", bikes_path(), class: "new-btn-medium" %>
+  <div class="text-center">
+    <%= link_to "Back to bikes", bikes_path, class: "btn-medium-inside" %>
+    &ensp;
+    <%= b.submit "Book this bike", class: "btn-medium-inside" %>
   </div>
 <% end %>
