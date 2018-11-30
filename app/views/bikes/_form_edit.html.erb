@@ -2,6 +2,7 @@
   <%= b.input :name %>
   <%= b.input :address %>
   <%= b.input :price_per_day %>
+  <%= b.input :category, collection: ["VTT", "Route", "Ville"] %>
   <%= b.input :description %>
   <%= b.input :photo %>
   <%= b.input :photo_cache, as: :hidden %>

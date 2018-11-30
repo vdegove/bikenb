@@ -17,7 +17,10 @@ class ReservationsController < ApplicationController
     authorize @reservation
     @reservation.validate!
     @reservation.save
-    redirect_to dashboard_owner_path
+    respond_to do |format|
+      format.html { redirect_to dashboard_owner_path }
+      format.js
+    end
   end
 
   def decline
@@ -25,7 +28,10 @@ class ReservationsController < ApplicationController
     authorize @reservation
     @reservation.decline!
     @reservation.save
-    redirect_to dashboard_owner_path
+    respond_to do |format|
+      format.html { redirect_to dashboard_owner_path }
+      format.js
+    end
   end
 
   private

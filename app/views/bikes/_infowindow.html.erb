@@ -1,0 +1,10 @@
+<div class="container-infowindow">
+  <div class="img-infowindow">
+    <%= cl_image_tag bike.photo, height: 80, width: 160, crop: :fill %>
+  </div>
+  <div class="content-infowindow">
+    <h1><strong> <%= bike.name %></strong></h1>
+    <p><em><%= number_to_currency(bike.price_per_day.to_f/100, unit: "€", format: "%n %u", separator: ",", separator: ".") %>/jour</em> </p>
+    <p style="margin-bottom: 0px; font-size: 9px; margin-bottom: 0; height: 15px"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+  </div>
+</div>
