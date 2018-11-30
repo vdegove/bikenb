@@ -7,21 +7,48 @@
   border-radius: 5px;
   margin: auto;
   padding: 30px;
+  position: relative;
+  margin-top: 50px;
 }
 
 .bike-photo {
   flex: 0 0 auto;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .show-form {
   flex: 1 1 auto;
   color: black;
   font-family: Raleway;
-  h1 {
-  }
   .label {
  font-family: Raleway;
  color: black;
  }
 }
+
+// this is the calendar picker
+.datepicker-input {
+  display: flex;
+  justify-content: space-between;
+  .form-group {
+    margin: 5px;
+  }
+}
+// this is "back to bikes link"
+.text-center-photo {
+  margin-top: 10px;
+  a {
+    text-decoration: none;
+    color: #e43a19;
+  }
+}
+
+// this is the the div encircling "book this bike btn"
+.text-center-show {
+  margin-top: 10px;
+  text-align: right;
+}
+
+
+
+

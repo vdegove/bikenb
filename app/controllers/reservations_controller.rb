@@ -1,10 +1,10 @@
 class ReservationsController < ApplicationController
-
   def create
+    @bike = Bike.find(params[:bike_id])
     @reservation = Reservation.new(reservations_params)
     authorize @reservation
     @reservation.user = current_user
-    @reservation.bike_id = params[:bike_id]
+    @reservation.bike = @bike
     if @reservation.save
       redirect_to dashboard_renter_path
     else
