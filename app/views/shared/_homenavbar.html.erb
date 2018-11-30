@@ -2,6 +2,8 @@
   <div></div>
   <div class="navbar-wagon-right">
     <% if user_signed_in? %>
+    <%= link_to "Rent your bike", new_bike_path, class: "btn-medium" %>
+      &ensp;&ensp;
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
