@@ -36,5 +36,11 @@
         </ul>
       </div>
     </div>
+    <% else %>
+    &ensp;&ensp;
+    <%= link_to "Sign in", new_user_session_path %>
+    &ensp;&ensp;
+    <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
   </div>
 </div>

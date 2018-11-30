@@ -1,6 +1,6 @@
 <div class="tabs">
-  <%= link_to("Bookings for my travels", dashboard_renter_path, class: "tab") %>
-  <%= link_to("Reservations on my bikes", dashboard_owner_path, class: "tab active ") %>
+  <%= link_to("Mes Réservations", dashboard_renter_path, class: "tab") %>
+  <%= link_to("Réservations pour mes vélos", dashboard_owner_path, class: "tab active ") %>
 </div>
 
 <div class="dashboard-container">
@@ -30,7 +30,9 @@
       </div>
     </div>
     <% end %>
-    <h2>My Bikes</h2>
+    <h2 style="
+    margin-top: 30px;
+">My Bikes</h2>
     <div class="owner-card-list">
       <% @bikes.each do |bike| %>
       <div class="card-box">
@@ -38,8 +40,9 @@
         </div>
         <div class="owner-card-description">
           <h3><%= bike.name %></h3>
-          <p><%= bike.price_per_day/100 %> € per day</p>
-          <%= link_to "edit", edit_bike_path(bike) %> <%= link_to "delete", bike_path(bike), method: :delete %>
+          <p><%= bike.price_per_day/100 %> €/Jour</p>
+          <%= link_to "edit", edit_bike_path(bike), class: "btn-medium-inside" %>
+          <%= link_to "delete", bike_path(bike), method: :delete, class: "btn-medium-inside" %>
         </div>
       </div>
       <% end %>
