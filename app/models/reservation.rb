@@ -11,7 +11,8 @@ class Reservation < ApplicationRecord
   end
 
   def price
+    return "set price" if self.ends_at.nil? || self.starts_at.nil?
     numberOfDays = (self.ends_at - self.starts_at + 1).to_i
-    price = (numberOfDays*bike.price_per_day)/100
+    (numberOfDays * bike.price_per_day) / 100
   end
 end

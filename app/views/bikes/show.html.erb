@@ -2,16 +2,19 @@
     <div data-aos="fade-up" data-aos-duration="2000">
       <div class="show-flexbox">
         <div class="bike-photo">
-         <%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
+           <%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
+           <div class="text-center-photo"><%= link_to "Back to bikes", bikes_path %></div>
         </div>
         <div class="show-form">
+          <div class="show-title">
+            <h1> <%= @bike.name %> </h1>
+          </div>
           <div class="show-description">
-             <h1> <%= @bike.name %> </h1>
              <p><%= @bike.description %></p>
              <label class="label">OÙ ?</label>
              <p><%= @bike.address %></p>
-            </div>
-          <%= render 'form_show', bike: @bike, class: "btn-medium-inside" %>
+          </div>
+           <%= render 'form_show', bike: @bike, class: "btn-medium-inside" %>
         </div>
       </div>
     </div>
