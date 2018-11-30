@@ -6,7 +6,7 @@
 <div class="dashboard-container">
   <div class="dashboard-content">
     <% @reservations.each do |reservation| %>
-    <div class="message">
+    <div data-reservation-id="<%= reservation.id %>" class="message">
       <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reservation.bike.photo, height: 300, width: 400, crop: :fill %>'); height: 120px; width: 150px">
       </div>
       <div class="message-name">
@@ -22,8 +22,8 @@
       <div class="message-status">
         <p class="status pending"><%= reservation.status %></p>
         <p class="price"><%= reservation.price %> €</p>
-        <%= link_to("Approuver", validate_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
-        <%= link_to("Décliner", decline_reservation_path(reservation), class: "btn btn-primary") unless reservation.status %>
+        <%= link_to("Approuver", validate_reservation_path(reservation), class: "btn btn-primary", remote: true) unless reservation.status %>
+        <%= link_to("Décliner", decline_reservation_path(reservation), class: "btn btn-primary", remote: true) unless reservation.status %>
       </div>
     </div>
     <% end %>
