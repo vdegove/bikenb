@@ -2,7 +2,21 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
-    @bikes = policy_scope(Bike)
+    mapping
+    if params[:category] == "Tous" && params[:location].present?
+      @bikes = policy_scope(Bike.near(params[:location], 50))
+    elsif params[:category] == "Tous"
+      @bikes = policy_scope(Bike)
+    elsif  params[:category].present?
+      @bikes = policy_scope(Bike.search_by_category(params[:category]))
+      if params[:location].present?
+        @bikes = @bikes.near(params[:location], 50)
+      else
+        @bikes
+      end
+    else
+      @bikes = policy_scope(Bike)
+    end
   end
 
   def new
@@ -12,6 +26,7 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bikes_params)
+    @bike.price_per_day = bikes_params[:price_per_day].to_f*100
     authorize @bike
     @bike.user = current_user
     if @bike.save
@@ -38,7 +53,7 @@ class BikesController < ApplicationController
     authorize @bike
     @bike.update(bikes_params)
     if @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to dashboard_owner_path
     else
       render :edit
     end
@@ -48,7 +63,18 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     authorize @bike
     @bike.destroy
-    redirect_to bikes_path
+    redirect_to dashboard_owner_path
+  end
+
+  def mapping
+    @bikes = Bike.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bikes.map do |bike|
+      {
+        lng: bike.longitude,
+        lat: bike.latitude
+      }
+    end
   end
 
   private

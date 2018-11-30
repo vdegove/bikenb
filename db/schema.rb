@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_110518) do
+ActiveRecord::Schema.define(version: 2018_11_29_100949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_11_28_110518) do
     t.string "photo", default: "image/upload/v1543328159/no_photo.jpg"
     t.float "latitude"
     t.float "longitude"
+    t.string "category"
     t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 

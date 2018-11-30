@@ -1,8 +1,8 @@
-  <%= simple_form_for [@bike, @reservation] do |b| %>
-  <%= b.date_field :starts_at %>
-  <%= b.date_field :ends_at %>
-  <div class="text-center">
-    <%= link_to "Back to bikes", bikes_path, class: "btn-medium-inside" %>
+<%= simple_form_for [@bike, @reservation] do |b| %>
+  <%= b.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= b.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+     <div class="text-center">
+    <%= link_to "Back to bikes", bikes_path %>
     &ensp;
     <%= b.submit "Book this bike", class: "btn-medium-inside" %>
   </div>
