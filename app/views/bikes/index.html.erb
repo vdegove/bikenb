@@ -1,41 +1,50 @@
 <div class="container-results" style="display: flex;">
   <div class="container-card" style="display: flex;flex-direction: column;width: 52%;">
     <div class="row">
-    <div class="results-message">
-      <strong> <%= @bikes.length %></strong>  Vélos prêt de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
-      <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
-    <div class="form-group">
-      <%= select_tag :category,
-      options_for_select("<option>Tous</option><option>VTT</option><option>Route</option><option>Ville</option>".html_safe,
-       params[:category]), class: "form-control"
-       %>
-       <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Paris" %>
+      <div class="results-message">
+        <strong> <%= @bikes.length %></strong>  Vélos près de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>.
+        <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
+        <div class="form-group">
+          <%= select_tag :category,
+          options_for_select("<option>Tous</option><option>VTT</option><option>Route</option><option>Ville</option>".html_safe,
+           params[:category]), class: "form-control"
+           %>
+           <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Paris" %>
+         </div>
+         <%= submit_tag "search bikes", class: 'btn-medium-inline' %>
+         <% end %>
+      </div>
     </div>
-  <%= submit_tag "search bikes", class: 'btn-medium-inline' %>
-  <% end %>
-    </div>
-     <div data-aos="fade-up" data-aos-duration="2000">
-      <% @bikes.each do |bike| %>
-        <div class="col-xs-12 col-sm-4" style="height:256px">
-          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');"> </div>
-          <div class="card-bottom">
-            <div class="card-description">
-              <h2><%= bike.name %></h2>
-              <p><%= number_to_currency(bike.price_per_day.to_f/100, unit: "€", format: "%n %u", separator: ",", separator: ".") %> per day</p>
+
+    <div class="container-card">
+      <div class="row">
+        <% @bikes.each do |bike| %>
+          <div data-aos="fade-up" data-aos-duration="2000">
+            <div class="col-xs-12 col-sm-4" style="height:256px">
+              <div class="card-bike">
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo, height: 300, width: 400, crop: :fill %>');">
+                </div>
+                <div class="card-bottom">
+                  <div class="card-description">
+                    <h2><%= bike.name %></h2>
+                    <p><%= number_to_currency(bike.price_per_day.to_f/100, unit: "€", format: "%n %u", separator: ",", separator: ".") %> per day</p>
+                  </div>
+                    <%= link_to "", bike_path(bike), class: "card-link" %>
+                </div>
+              </div>
             </div>
-            <%= link_to "", bike_path(bike), class: "card-link" %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-  </div>
+
   <div
-    id="map"
-    style="width: 40%;
-    height: 80vh; margin-right: 10px"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  id="map"
+  style="width: 40%;
+  height: 80vh; margin-right: 10px"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </div>
 

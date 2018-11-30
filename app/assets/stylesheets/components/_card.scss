@@ -8,18 +8,22 @@
 }
 
 .card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 24px;
+  padding-left: 24px;
+  padding-bottom: 10px;
 }
+
 .card-description h2 {
   font-size: 24px;
+  margin: 10px 0;
 }
+
 .card-description p {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 20px;
+  opacity: 0.8;
   font-weight: lighter;
+  margin: 0;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -30,20 +34,30 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.1;
+
+.card-bike {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  margin-right : 20px;
+}
+
+.card-bike:hover {
+  transition: 0.3s;
+  transform: translateY(-12px);
 }
 
 .card-image {
   height: 156px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   background-size: cover;
   background-position: center;
-
 }
 
 .card-bottom {
-  height:100px
+  height:7.5vh;
 }
 
 .container-card {
@@ -52,4 +66,3 @@
   margin-right: 40px;
   margin-left: 40px;
 }
-
