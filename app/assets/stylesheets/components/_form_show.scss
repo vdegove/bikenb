@@ -1,0 +1,27 @@
+.show-flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 55%;
+  border-radius: 5px;
+  margin: auto;
+  padding: 30px;
+}
+
+.bike-photo {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.show-form {
+  flex: 1 1 auto;
+  color: black;
+  font-family: Raleway;
+  h1 {
+  }
+  .label {
+ font-family: Raleway;
+ color: black;
+ }
+}

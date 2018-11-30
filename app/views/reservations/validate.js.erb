@@ -1,0 +1,10 @@
+console.log("coucou");
+
+function update_status() {
+  const reservation = document.querySelector("[data-reservation-id='<%= @reservation.id %>']")
+  const messageStatus = reservation.querySelector(".message-status");
+  messageStatus.innerHTML = '<p class="status pending"><%= @reservation.status %></p><p class="price"><%= @reservation.price %> €</p>';
+};
+
+
+update_status();

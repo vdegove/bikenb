@@ -1,31 +1,30 @@
 <div class="tabs">
-  <%= link_to("My Bookings", dashboard_renter_path, class: "tab active") %>
-  <%= link_to("My Bikes", dashboard_owner_path, class: "tab") %>
+  <%= link_to("Bookings for my travels", dashboard_renter_path, class: "tab active") %>
+  <%= link_to("Reservations on my bikes", dashboard_owner_path, class: "tab") %>
 </div>
 
 <div class="dashboard-container">
   <div class="dashboard-content">
-    <h2>My Bookings</h2>
-        <% @reservations.each do |reservation| %>
-          <div class="message">
-            <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reservation.bike.photo, height: 300, width: 400, crop: :fill %>'); height: 120px; width: 150px">
-            </div>
-            <div class="message-name">
-              <h3><%= reservation.bike.name %></h3>
-              <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
-            </div>
-            <div class="message-body">
-              <p><strong>Je veux votre vélo !</strong></p>
-              <p>
-                <%= reservation.bike.description %>
-              </p>
-            </div>
-            <div class="message-status">
-              <p class="status pending"><%= reservation.status %></p>
-              <p class="price"><%= reservation.price %> €</p>
-            </div>
-          </div>
-        <% end %>
+    <% @reservations.each do |reservation| %>
+    <div class="message">
+      <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reservation.bike.photo, height: 300, width: 400, crop: :fill %>'); height: 120px; width: 150px">
+      </div>
+      <div class="message-name">
+        <h3><%= reservation.bike.name %></h3>
+        <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
+      </div>
+      <div class="message-body">
+        <p><strong>Je veux votre vélo !</strong></p>
+        <p>
+          <%= reservation.bike.description %>
+        </p>
+      </div>
+      <div class="message-status">
+        <p class="status pending"><%= reservation.status %></p>
+        <p class="price"><%= reservation.price %> €</p>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 

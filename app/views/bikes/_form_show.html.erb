@@ -2,11 +2,8 @@
   <%= b.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= b.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
      <div class="text-center">
-    <%= b.submit "Book this bike", class: "new-btn-medium" %>
-    <% if policy(@bike).create? %>
-      <%= b.submit "Edit your bike", class: "new-btn-medium" %>
-    <% end %>
-    <br>
-   <%= link_to "Back to bikes", bikes_path(), class: "new-btn-medium" %>
+    <%= link_to "Back to bikes", bikes_path %>
+    &ensp;
+    <%= b.submit "Book this bike", class: "btn-medium-inside" %>
   </div>
 <% end %>
