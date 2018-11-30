@@ -1,13 +1,11 @@
 <div class="navbar-home-wagon navbar-fixed-top">
   <div></div>
     <div class="navbar-home-wagon-right hidden-xs hidden-sm">
-
-
       <% if user_signed_in? %>
       <%= link_to "Rent your bike", new_bike_path, class: "btn-medium" %>
-      &ensp;
+      &ensp;&ensp;
       <%= link_to "Bikes", bikes_path %>
-      &ensp;
+      &ensp;&ensp;
         <div class="navbar-home-wagon-item">
           <div class="dropdown">
             <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
