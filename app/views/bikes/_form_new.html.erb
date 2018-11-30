@@ -2,14 +2,15 @@
   <%= b.input :name %>
   <%= b.input :address %>
   <%= b.input :price_per_day %>
+  <%= b.input :category, collection: ["VTT", "Route", "Ville"] %>
   <%= b.input :description %>
   <%= b.input :photo %>
   <%= b.input :photo_cache, as: :hidden %>
   <div class="text-center">
     <% if policy(@bike).create? %>
-      <%= b.submit "Add your bike", class: "new-btn-medium" %>
+      <%= b.submit "Add your bike", class: "btn-medium-inside" %>
     <% end %>
     &ensp;&ensp;
-    <%= link_to "Back to bikes", bikes_path(), class: "new-btn-medium" %>
+    <%= link_to "Back to bikes", bikes_path, class: "btn-medium-inside" %>
   </div>
 <% end %>
