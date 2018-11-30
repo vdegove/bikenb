@@ -36,6 +36,7 @@
   opacity: 1;
   color: white;
   background-color: #FF5A5F;
+  transition: 0.2s;
 }
 
 .btn-medium-inside {
@@ -48,9 +49,11 @@
   background-color: white;
 }
 
-.btn-medium-inside a:hover {
-  text-decoration: none;
-  color: #6e727d;
+.btn-medium-inside:hover {
+  opacity: 1;
+  color: white;
+  background-color: #FF5A5F;
+  transition: 0.2s;
 }
 
 .btn-medium-inline {
@@ -69,4 +72,5 @@
   opacity: 1;
   color: white;
   background-color: #FF5A5F;
+  transition: 0.2s;
 }
