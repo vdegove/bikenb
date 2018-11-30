@@ -7,4 +7,4 @@ import "../plugins/flatpickr"
 
 initAddrAutocomplete();
 initMapbox();
-initAddrAutocomplete();
+
