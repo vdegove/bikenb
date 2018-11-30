@@ -1,6 +1,6 @@
 <div class="container-results" style="display: flex;">
-  <div class="container-card" style="display: flex;flex-direction: column;width: 52%;">
-    <div class="row">
+  <div class="container-card" style="width: 52%;">
+    <div>
       <div class="results-message">
         <strong> <%= @bikes.length %></strong>  Vélos près de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>.
         <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
@@ -15,8 +15,6 @@
          <% end %>
       </div>
     </div>
-
-    <div class="container-card">
       <div class="row">
         <% @bikes.each do |bike| %>
           <div data-aos="fade-up" data-aos-duration="2000">
@@ -37,7 +35,6 @@
         <% end %>
       </div>
     </div>
-  </div>
 
   <div
   id="map"
