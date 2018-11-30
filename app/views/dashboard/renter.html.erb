@@ -6,22 +6,25 @@
 <div class="dashboard-container">
   <div class="dashboard-content">
     <% @reservations.each do |reservation| %>
-    <div class="message">
+    <div data-reservation-id="<%= reservation.id %>" class="message">
       <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reservation.bike.photo, height: 300, width: 400, crop: :fill %>'); height: 120px; width: 150px">
       </div>
       <div class="message-name">
         <h3><%= reservation.bike.name %></h3>
-        <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
+      </div>
+      <div class="message-body renter-name">
+        <p>Owner: <strong><%= reservation.bike.user.email %></strong></p>
       </div>
       <div class="message-body">
-        <p><strong>Je veux votre vélo !</strong></p>
-        <p>
-          <%= reservation.bike.description %>
-        </p>
+        <p>Beginning : <strong><%= reservation.starts_at.strftime("%m/%d/%Y")  %></strong></p>
       </div>
+      <div class="message-body message-end-date">
+        <p>End : <strong><%= reservation.ends_at.strftime("%m/%d/%Y") %></strong></p>
+      </div>
+
       <div class="message-status">
-        <p class="status pending"><%= reservation.status %></p>
         <p class="price"><%= reservation.price %> €</p>
+        <p class="status pending"><%= reservation.status %></p>
       </div>
     </div>
     <% end %>

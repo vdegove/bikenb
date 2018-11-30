@@ -75,16 +75,23 @@ body, html {
 .message:last-child {
   border-bottom: none;
 }
-.message-body {
+.message-end-date {
   flex-grow: 1;
 }
-.message-name {
+
+.renter-name {
+  min-width: 300px;
+}
+
+.message-name  {
   padding-left: 10px;
-  min-width: 100px;
+  padding-right: 10px;
+  min-width: 150px;
 }
 .message-name h3 {
-  font-size: 13px;
+  font-size: 20px;
   margin-bottom: 0px;
+  margin-top:0;
 }
 .message-name p {
   font-size: 13px;
@@ -123,6 +130,10 @@ body, html {
   color: green;
 }
 
+.price {
+  text-align: right;
+}
+
 .avatar-large {
   background-position: center;
   background-size: cover;
@@ -159,3 +170,4 @@ body, html {
 .dashboard-content h2 {
   padding-left: 20px;
 }
+

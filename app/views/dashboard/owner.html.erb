@@ -11,19 +11,22 @@
       </div>
       <div class="message-name">
         <h3><%= reservation.bike.name %></h3>
-        <p><%= reservation.starts_at %> to <%= reservation.ends_at %></p>
+      </div>
+      <div class="message-body renter-name">
+        <p>Asked by: <strong><%= reservation.user.email %></strong></p>
       </div>
       <div class="message-body">
-        <p><strong>Je veux votre vélo !</strong></p>
-        <p>
-          <%= reservation.bike.description %>
-        </p>
+        <p>Beginning : <strong><%= reservation.starts_at.strftime("%m/%d/%Y")  %></strong></p>
       </div>
+      <div class="message-body message-end-date">
+        <p>End : <strong><%= reservation.ends_at.strftime("%m/%d/%Y") %></strong></p>
+      </div>
+
       <div class="message-status">
-        <p class="status pending"><%= reservation.status %></p>
         <p class="price"><%= reservation.price %> €</p>
         <%= link_to("Approuver", validate_reservation_path(reservation), class: "btn btn-primary", remote: true) unless reservation.status %>
         <%= link_to("Décliner", decline_reservation_path(reservation), class: "btn btn-primary", remote: true) unless reservation.status %>
+        <p class="status pending"><%= reservation.status %></p>
       </div>
     </div>
     <% end %>
