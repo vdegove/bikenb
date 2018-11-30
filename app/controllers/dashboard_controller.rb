@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
   def owner
     @bikes = current_user.bikes
     @reservations = current_user.reservations_as_owner
+    @reservations.reverse!
   end
 
   def renter
