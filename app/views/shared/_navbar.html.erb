@@ -2,9 +2,9 @@
   <div></div>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <% if user_signed_in? %>
-      <%= link_to "Rent your bike", new_bike_path, class: "btn-medium-inside" %>
+      <%= link_to "Rejoindre le peloton", new_bike_path, class: "btn-medium-inside" %>
       &ensp; &ensp;
-      <%= link_to "Bikes", bikes_path %>
+      <%= link_to "Vélos", bikes_path %>
       &ensp; &ensp;
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -12,16 +12,16 @@
                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                   <li><%= link_to "Home", root_path %></li>
                   <li><%= link_to "Dashboard", dashboard_renter_path %></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
                 </ul>
           </div>
         </div>
       <% else %>
-      <%= link_to "Bikes", bikes_path %>
+      <%= link_to "Vélos", bikes_path %>
         &ensp;&ensp;
-        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Connexion", new_user_session_path %>
         &ensp;&ensp;
-        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Inscription", new_user_registration_path %>
       <% end %>
 
           <!-- Dropdown appearing on mobile only -->
