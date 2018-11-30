@@ -2,7 +2,7 @@
   <div class="container-card" style="display: flex;flex-direction: column;width: 52%;">
     <div class="row">
     <div class="results-message">
-      <strong> <%= @bikes.length %></strong>  Vélos prêt de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
+      <strong> <%= @bikes.length %></strong>  vélos près de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
       <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
     <div class="form-group">
       <%= select_tag :category,
@@ -11,7 +11,7 @@
        %>
        <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Paris" %>
     </div>
-  <%= submit_tag "search bikes", class: 'btn-medium-inline' %>
+  <%= submit_tag "search bikes", class: 'btn-medium-inside' %>
   <% end %>
     </div>
      <div data-aos="fade-up" data-aos-duration="2000">
