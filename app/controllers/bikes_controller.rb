@@ -72,7 +72,8 @@ class BikesController < ApplicationController
     @markers = @bikes.map do |bike|
       {
         lng: bike.longitude,
-        lat: bike.latitude
+        lat: bike.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { bike: bike })
       }
     end
   end
