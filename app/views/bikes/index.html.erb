@@ -2,7 +2,7 @@
   <div class="container-card" style="width: 52%;">
     <div>
       <div class="results-message">
-        <strong> <%= @bikes.length %></strong>  Vélos près de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>.
+        <strong> <%= @bikes.length %></strong>  jolies bicyclettes près de chez vous <i class="fa fa-bicycle fa-lg" aria-hidden="true"></i>
         <%= form_tag bikes_path, method: :get, class: "form-inline form-results-page" do %>
         <div class="form-group">
           <%= select_tag :category,
